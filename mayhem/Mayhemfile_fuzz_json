@@ -1,0 +1,9 @@
+project: go-json-iterator
+target: fuzz_json
+cmds:
+  - cmd: /mayhem/fuzz_json
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/json.dict
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_json/testsuite

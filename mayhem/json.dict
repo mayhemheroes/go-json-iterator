@@ -1,0 +1,55 @@
+# libFuzzer dictionary for JSON input (json-iterator/go Fuzz target).
+# Structural tokens, literals, and common escape/number shapes to help the
+# fuzzer build well-formed JSON faster.
+
+# structural
+"{"
+"}"
+"["
+"]"
+":"
+","
+"\""
+
+# literals
+"true"
+"false"
+"null"
+
+# number shapes
+"0"
+"-0"
+"1"
+"-1"
+"1.5"
+"1e10"
+"1E10"
+"1.5e+10"
+"-1.5e-10"
+"12345678901234567890"
+
+# string escapes
+"\\\""
+"\\\\"
+"\\/"
+"\\b"
+"\\f"
+"\\n"
+"\\r"
+"\\t"
+"\\u0041"
+"\\u00e9"
+"\\ud834\\udd1e"
+
+# common keys (match harness struct S json tags)
+"\"B1\""
+"\"C\""
+"\"D\""
+"\"E\""
+"\"key\""
+"\"value\""
+
+# whitespace / edge bytes
+" "
+"\x09"
+"\x0a"
